@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorts Editor | 영상 편집 신청</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #0f172a; color: white; }
+        .form-input {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            transition: all 0.2s;
+        }
+        .form-input:focus {
+            border-color: #ef4444;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10 px-4">
+
+    <div class="max-w-xl mx-auto">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-extrabold text-red-500 mb-2">Shorts 편집 신청서</h1>
+            <p class="text-gray-400">원하시는 스타일을 적어주시면 맞춰서 작업해 드립니다.</p>
+        </div>
+
+        <div class="bg-slate-800 rounded-2xl shadow-2xl p-7 border border-slate-700">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data" class="space-y-5">
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">성함</label>
+                        <input type="text" name="name" required class="form-input w-full p-3 rounded-lg text-white" placeholder="성함 입력">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">이메일</label>
+                        <input type="email" name="_replyto" required class="form-input w-full p-3 rounded-lg text-white" placeholder="이메일 입력">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold mb-2">상세 편집 요청사항</label>
+                    <textarea name="request-detail" rows="5" required
+                        class="form-input w-full p-3 rounded-lg text-white text-sm" 
+                        placeholder="예: 
+- 자막은 노란색 테두리로 강조해 주세요.
+- 0:10초 부분에 웃음 효과음 넣어주세요.
+- 전체적으로 빠른 템포로 편집 원합니다.
+- 참고하고 싶은 영상 링크: (주소 입력)"></textarea>
+                    <p class="text-xs text-gray-500 mt-2">* 구체적으로 적어주실수록 만족스러운 결과물이 나옵니다!</p>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold mb-2">영상 파일 첨부</label>
+                    <div class="relative border-2 border-dashed border-slate-600 rounded-xl p-8 text-center hover:border-red-500 transition cursor-pointer group">
+                        <input type="file" name="upload" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                        <div class="space-y-3">
+                            <div class="mx-auto h-12 w-12 text-gray-500 group-hover:text-red-500 transition">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                            </div>
+                            <p class="text-sm text-gray-400">이곳을 클릭하거나 영상을 드래그하세요</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl transition duration-200 shadow-lg active:scale-[0.98]">
+                    편집 신청 완료하기
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
