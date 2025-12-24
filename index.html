@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Editor | 영상 편집 신청</title>
+    <title>Video Editor | 신청하기</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Pretendard', sans-serif; background-color: #0f172a; color: white; }
@@ -29,7 +29,7 @@
     <div class="max-w-xl mx-auto">
         <div class="text-center mb-10">
             <h1 class="text-3xl font-extrabold text-red-500 mb-2">영상 편집 신청서</h1>
-            <p class="text-gray-400">성함과 연락처, 원본 영상을 남겨주세요.</p>
+            <p class="text-gray-400">신청 내용을 바탕으로 연락드리겠습니다.</p>
         </div>
 
         <div class="bg-slate-800 rounded-2xl shadow-2xl p-7 border border-slate-700">
@@ -38,12 +38,17 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-semibold mb-2">성함</label>
-                        <input type="text" name="name" required class="form-input w-full p-3 rounded-lg text-white" placeholder="성함 입력">
+                        <input type="text" name="name" required class="form-input w-full p-3 rounded-lg text-white" placeholder="홍길동">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold mb-2">이메일</label>
-                        <input type="email" name="_replyto" required class="form-input w-full p-3 rounded-lg text-white" placeholder="이메일 입력">
+                        <label class="block text-sm font-semibold mb-2">전화번호</label>
+                        <input type="tel" name="phone" required class="form-input w-full p-3 rounded-lg text-white" placeholder="010-0000-0000">
                     </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold mb-2">이메일 주소</label>
+                    <input type="email" name="_replyto" required class="form-input w-full p-3 rounded-lg text-white" placeholder="example@email.com">
                 </div>
 
                 <div>
@@ -53,7 +58,7 @@
                             <input type="radio" name="service-type" id="shorts" value="쇼츠" class="hidden" checked>
                             <label for="shorts" class="block text-center border border-slate-600 p-4 rounded-xl cursor-pointer hover:border-gray-400 transition">
                                 <span class="block font-bold">쇼츠 (Shorts)</span>
-                                <span class="block text-xs text-gray-400 mt-1">편당 20,000원</span>
+                                <span class="block text-xs text-red-400 mt-1">20,000원</span>
                             </label>
                         </div>
                         <div class="relative">
@@ -67,28 +72,25 @@
                 </div>
 
                 <div>
-                    <label class="block text-sm font-semibold mb-2">상세 요청사항 (편집 스타일 등)</label>
-                    <textarea name="request-detail" rows="4" required
-                        class="form-input w-full p-3 rounded-lg text-white text-sm" 
-                        placeholder="원하시는 자막 스타일, 효과음, 참고 영상 링크 등을 자유롭게 적어주세요."></textarea>
+                    <label class="block text-sm font-semibold mb-2">상세 요청사항</label>
+                    <textarea name="message" rows="4" required class="form-input w-full p-3 rounded-lg text-white text-sm" placeholder="자막 스타일, 효과음 등 구체적인 요청사항을 적어주세요."></textarea>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-semibold mb-2">영상 파일 첨부</label>
-                    <div class="relative border-2 border-dashed border-slate-600 rounded-xl p-8 text-center hover:border-red-500 transition cursor-pointer group">
-                        <input type="file" name="upload" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-                        <div class="space-y-3">
-                            <p class="text-sm text-gray-400">영상을 드래그하거나 클릭하여 첨부</p>
-                            <p class="text-[10px] text-gray-500">※ 파일 용량이 크면 구글 드라이브 링크를 요청사항에 남겨주세요.</p>
-                        </div>
+                    <label class="block text-sm font-semibold mb-2">원본 영상 첨부</label>
+                    <div class="relative border-2 border-dashed border-slate-600 rounded-xl p-6 text-center hover:border-red-500 transition cursor-pointer">
+                        <input type="file" name="upload" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                        <p class="text-sm text-gray-400">파일을 드래그하거나 클릭</p>
+                        <p class="text-[10px] text-gray-500 mt-1">대용량은 구글 드라이브 링크를 요청사항에 적어주세요.</p>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl transition shadow-lg active:scale-[0.98]">
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl transition shadow-lg active:scale-95">
                     편집 신청 완료하기
                 </button>
             </form>
         </div>
     </div>
+
 </body>
 </html>
