@@ -3,95 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Editor | 신청하기</title>
+    <title>YouTube Video Editor | 신청하기</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Pretendard', sans-serif; background-color: #0f172a; color: white; }
+        body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #0f0f0f; }
+        .yt-card { background-color: white; border: 1px solid #e5e5e5; }
         .form-input {
-            background-color: #1e293b;
-            border: 1px solid #334155;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
             transition: all 0.2s;
         }
         .form-input:focus {
-            border-color: #ef4444;
+            border-color: #065fd4;
             outline: none;
-            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+            background-color: white;
         }
         input[type="radio"]:checked + label {
-            border-color: #ef4444;
-            background-color: rgba(239, 68, 68, 0.1);
-            color: #ef4444;
+            border-color: #ff0000;
+            background-color: #fff1f1;
+            color: #ff0000;
         }
     </style>
 </head>
 <body class="min-h-screen py-10 px-4">
 
     <div class="max-w-xl mx-auto">
-        <div class="text-center mb-10">
-            <h1 class="text-3xl font-extrabold text-red-500 mb-2">영상 편집 신청서</h1>
-            <p class="text-gray-400">신청 내용을 바탕으로 연락드리겠습니다.</p>
+        <div class="flex items-center justify-center mb-8">
+            <svg viewBox="0 0 24 24" class="h-10 w-10 text-[#ff0000] fill-current"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+            <h1 class="text-2xl font-bold ml-2">Premium Editor</h1>
         </div>
 
-        <div class="bg-slate-800 rounded-2xl shadow-2xl p-7 border border-slate-700">
+        <div class="yt-card rounded-xl shadow-sm p-8">
             <form action="https://formspree.io/f/mnjargzw" method="POST" enctype="multipart/form-data" class="space-y-6">
                 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-semibold mb-2">성함</label>
-                        <input type="text" name="name" required class="form-input w-full p-3 rounded-lg text-white" placeholder="홍길동">
+                        <label class="block text-sm font-medium mb-1 text-gray-700">성함</label>
+                        <input type="text" name="name" required class="form-input w-full p-3 rounded-lg" placeholder="홍길동">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold mb-2">전화번호</label>
-                        <input type="tel" name="phone" required class="form-input w-full p-3 rounded-lg text-white" placeholder="010-0000-0000">
+                        <label class="block text-sm font-medium mb-1 text-gray-700">전화번호</label>
+                        <input type="tel" name="phone" required class="form-input w-full p-3 rounded-lg" placeholder="010-0000-0000">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-semibold mb-2">이메일 주소</label>
-                    <input type="email" name="_replyto" required class="form-input w-full p-3 rounded-lg text-white" placeholder="example@email.com">
+                    <label class="block text-sm font-medium mb-1 text-gray-700">이메일</label>
+                    <input type="email" name="_replyto" required class="form-input w-full p-3 rounded-lg" placeholder="example@gmail.com">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-semibold mb-3">편집 서비스 선택</label>
+                    <label class="block text-sm font-medium mb-3 text-gray-700">서비스 타입</label>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="relative">
                             <input type="radio" name="service-type" id="shorts" value="쇼츠" class="hidden" checked>
-                            <label for="shorts" class="block text-center border border-slate-600 p-4 rounded-xl cursor-pointer hover:border-gray-400 transition">
+                            <label for="shorts" class="block text-center border border-gray-300 p-4 rounded-xl cursor-pointer hover:bg-gray-50 transition">
                                 <span class="block font-bold">쇼츠 (Shorts)</span>
-                                <span class="block text-xs text-red-400 mt-1">20,000원</span>
+                                <span class="block text-xs text-red-600 mt-1 font-semibold">20,000원</span>
                             </label>
                         </div>
                         <div class="relative">
                             <input type="radio" name="service-type" id="longform" value="롱폼" class="hidden">
-                            <label for="longform" class="block text-center border border-slate-600 p-4 rounded-xl cursor-pointer hover:border-gray-400 transition">
+                            <label for="longform" class="block text-center border border-gray-300 p-4 rounded-xl cursor-pointer hover:bg-gray-50 transition">
                                 <span class="block font-bold">롱폼 (YouTube)</span>
-                                <span class="block text-xs text-gray-400 mt-1">협의 후 결정</span>
+                                <span class="block text-xs text-gray-500 mt-1">협의 후 결정</span>
                             </label>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-semibold mb-2">상세 요청사항</label>
-                    <textarea name="message" rows="4" required class="form-input w-full p-3 rounded-lg text-white text-sm" placeholder="자막 스타일, 효과음 등 구체적인 요청사항을 적어주세요."></textarea>
+                    <label class="block text-sm font-medium mb-1 text-gray-700">상세 요청사항</label>
+                    <textarea name="message" rows="4" required class="form-input w-full p-3 rounded-lg text-sm" placeholder="유튜브 채널명이나 원하시는 편집 스타일(자막, 효과음 등)을 적어주세요."></textarea>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-semibold mb-2">원본 영상 첨부</label>
-                    <div class="relative border-2 border-dashed border-slate-600 rounded-xl p-6 text-center hover:border-red-500 transition cursor-pointer">
+                    <label class="block text-sm font-medium mb-1 text-gray-700">원본 영상 첨부</label>
+                    <div class="relative border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-[#065fd4] transition cursor-pointer bg-gray-50">
                         <input type="file" name="upload" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-                        <p class="text-sm text-gray-400">파일을 드래그하거나 클릭</p>
-                        <p class="text-[10px] text-gray-500 mt-1">대용량은 구글 드라이브 링크를 요청사항에 적어주세요.</p>
+                        <p class="text-sm text-gray-600 font-medium">영상을 드래그하거나 클릭하여 업로드</p>
+                        <p class="text-[11px] text-gray-500 mt-1">※ 롱폼은 구글 드라이브 링크를 권장합니다.</p>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl transition shadow-lg active:scale-95">
-                    편집 신청 완료하기
+                <button type="submit" class="w-full bg-[#cc0000] hover:bg-[#ff0000] text-white font-bold py-4 rounded-full transition shadow-md active:scale-95 text-lg">
+                    신청서 제출하기
                 </button>
             </form>
         </div>
+        <p class="text-center text-xs text-gray-400 mt-6">© 2025 YouTube Editor Studio. All rights reserved.</p>
     </div>
 
 </body>
 </html>
-
