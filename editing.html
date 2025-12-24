@@ -17,7 +17,6 @@
             outline: none;
             box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
         }
-        /* 라디오 버튼 커스텀 스타일 */
         input[type="radio"]:checked + label {
             border-color: #ef4444;
             background-color: rgba(239, 68, 68, 0.1);
@@ -30,7 +29,7 @@
     <div class="max-w-xl mx-auto">
         <div class="text-center mb-10">
             <h1 class="text-3xl font-extrabold text-red-500 mb-2">영상 편집 신청서</h1>
-            <p class="text-gray-400">원하시는 서비스 타입을 선택해 주세요.</p>
+            <p class="text-gray-400">성함과 연락처, 원본 영상을 남겨주세요.</p>
         </div>
 
         <div class="bg-slate-800 rounded-2xl shadow-2xl p-7 border border-slate-700">
@@ -54,7 +53,7 @@
                             <input type="radio" name="service-type" id="shorts" value="쇼츠" class="hidden" checked>
                             <label for="shorts" class="block text-center border border-slate-600 p-4 rounded-xl cursor-pointer hover:border-gray-400 transition">
                                 <span class="block font-bold">쇼츠 (Shorts)</span>
-                                <span class="block text-xs text-gray-400 mt-1">건당 20,000원</span>
+                                <span class="block text-xs text-gray-400 mt-1">편당 20,000원</span>
                             </label>
                         </div>
                         <div class="relative">
@@ -68,10 +67,10 @@
                 </div>
 
                 <div>
-                    <label class="block text-sm font-semibold mb-2">상세 편집 요청사항</label>
+                    <label class="block text-sm font-semibold mb-2">상세 요청사항 (편집 스타일 등)</label>
                     <textarea name="request-detail" rows="4" required
                         class="form-input w-full p-3 rounded-lg text-white text-sm" 
-                        placeholder="자막 스타일, 효과음, 참고 영상 링크 등을 자유롭게 적어주세요."></textarea>
+                        placeholder="원하시는 자막 스타일, 효과음, 참고 영상 링크 등을 자유롭게 적어주세요."></textarea>
                 </div>
 
                 <div>
@@ -79,21 +78,17 @@
                     <div class="relative border-2 border-dashed border-slate-600 rounded-xl p-8 text-center hover:border-red-500 transition cursor-pointer group">
                         <input type="file" name="upload" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
                         <div class="space-y-3">
-                            <div class="mx-auto h-12 w-12 text-gray-500 group-hover:text-red-500 transition">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                            </div>
                             <p class="text-sm text-gray-400">영상을 드래그하거나 클릭하여 첨부</p>
-                            <p class="text-[10px] text-gray-500 leading-tight">※ 롱폼의 경우 용량이 크면 구글 드라이브 링크를<br>위 요청사항 칸에 남겨주세요.</p>
+                            <p class="text-[10px] text-gray-500">※ 파일 용량이 크면 구글 드라이브 링크를 요청사항에 남겨주세요.</p>
                         </div>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl transition duration-200 shadow-lg active:scale-[0.98]">
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl transition shadow-lg active:scale-[0.98]">
                     편집 신청 완료하기
                 </button>
             </form>
         </div>
     </div>
-
 </body>
 </html>
