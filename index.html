@@ -5,23 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영상 편집 신청서</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #0f0f0f; }
-        .yt-card { background-color: white; border: 1px solid #e5e5e5; }
+        .yt-card { background-color: white; border: 1px solid #e5e5e5; border-top: 5px solid #ff0000; }
         .form-input {
             background-color: #ffffff;
             border: 1px solid #ccc;
             transition: all 0.2s;
         }
         .form-input:focus {
-            border-color: #065fd4;
+            border-color: #ff0000;
             outline: none;
-            box-shadow: 0 0 0 1px #065fd4;
+            box-shadow: 0 0 0 1px #ff0000;
         }
         input[type="radio"]:checked + label {
             border-color: #ff0000;
             background-color: #fff1f1;
             color: #ff0000;
+            border-width: 2px;
+        }
+        /* 업로드 박스 강조 효과 */
+        .upload-active {
+            border-color: #ff0000 !important;
+            background-color: #fff1f1 !important;
         }
     </style>
 </head>
@@ -29,70 +36,92 @@
 
     <div class="max-w-xl mx-auto">
         <div class="text-center mb-10">
-            <h1 class="text-3xl font-bold text-[#0f0f0f]">영상 편집 신청서</h1>
-            <p class="text-gray-500 mt-2">아래 내용을 작성하여 제출해 주세요.</p>
+            <h1 class="text-4xl font-extrabold text-[#0f0f0f] tracking-tight">
+                영상 <span class="text-[#ff0000]">편집</span> 신청서
+            </h1>
+            <p class="text-gray-500 mt-3 font-medium">빠르고 퀄리티 높은 편집을 약속드립니다.</p>
         </div>
 
-        <div class="yt-card rounded-xl shadow-sm p-8">
+        <div class="yt-card rounded-2xl shadow-xl p-8">
             <form action="https://formspree.io/f/mnjargzw" method="POST" enctype="multipart/form-data" class="space-y-6">
                 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-medium mb-1 text-gray-700">성함</label>
-                        <input type="text" name="name" required class="form-input w-full p-3 rounded-lg" placeholder="홍길동">
+                        <label class="block text-sm font-bold mb-1 text-gray-700">성함 <span class="text-[#ff0000]">*</span></label>
+                        <input type="text" name="name" required class="form-input w-full p-4 rounded-xl" placeholder="홍길동">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-1 text-gray-700">전화번호</label>
-                        <input type="tel" name="phone" required class="form-input w-full p-3 rounded-lg" placeholder="010-0000-0000">
+                        <label class="block text-sm font-bold mb-1 text-gray-700">전화번호 <span class="text-[#ff0000]">*</span></label>
+                        <input type="tel" name="phone" required class="form-input w-full p-4 rounded-xl" placeholder="010-0000-0000">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium mb-1 text-gray-700">이메일</label>
-                    <input type="email" name="_replyto" required class="form-input w-full p-3 rounded-lg" placeholder="example@gmail.com">
+                    <label class="block text-sm font-bold mb-1 text-gray-700">이메일 <span class="text-[#ff0000]">*</span></label>
+                    <input type="email" name="_replyto" required class="form-input w-full p-4 rounded-xl" placeholder="example@gmail.com">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium mb-3 text-gray-700">서비스 타입</label>
+                    <label class="block text-sm font-bold mb-3 text-gray-700">서비스 타입 선택</label>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="relative">
                             <input type="radio" name="service-type" id="shorts" value="쇼츠" class="hidden" checked>
-                            <label for="shorts" class="block text-center border border-gray-300 p-4 rounded-xl cursor-pointer hover:bg-gray-50 transition">
-                                <span class="block font-bold">쇼츠 (Shorts)</span>
-                                <span class="block text-xs text-red-600 mt-1 font-semibold">20,000원</span>
+                            <label for="shorts" class="block text-center border border-gray-300 p-4 rounded-2xl cursor-pointer hover:border-red-300 transition shadow-sm">
+                                <span class="block font-extrabold text-lg">쇼츠 (Shorts)</span>
+                                <span class="block text-sm text-red-600 mt-1 font-bold italic">20,000원</span>
                             </label>
                         </div>
                         <div class="relative">
                             <input type="radio" name="service-type" id="longform" value="롱폼" class="hidden">
-                            <label for="longform" class="block text-center border border-gray-300 p-4 rounded-xl cursor-pointer hover:bg-gray-50 transition">
-                                <span class="block font-bold">롱폼 (YouTube)</span>
-                                <span class="block text-xs text-gray-500 mt-1">협의 후 결정</span>
+                            <label for="longform" class="block text-center border border-gray-300 p-4 rounded-2xl cursor-pointer hover:border-red-300 transition shadow-sm">
+                                <span class="block font-extrabold text-lg">롱폼 (YouTube)</span>
+                                <span class="block text-sm text-gray-500 mt-1 font-bold">협의 후 결정</span>
                             </label>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium mb-1 text-gray-700">상세 요청사항</label>
-                    <textarea name="message" rows="4" required class="form-input w-full p-3 rounded-lg text-sm" placeholder="편집 스타일이나 참고할 만한 영상 주소를 적어주세요."></textarea>
+                    <label class="block text-sm font-bold mb-1 text-gray-700">상세 요청사항</label>
+                    <textarea name="message" rows="4" required class="form-input w-full p-4 rounded-xl text-sm" placeholder="자막 스타일, 효과음, 원하는 분위기를 자유롭게 적어주세요."></textarea>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium mb-1 text-gray-700">영상 파일 첨부</label>
-                    <div class="relative border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-[#065fd4] transition cursor-pointer bg-gray-50">
-                        <input type="file" name="upload" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-                        <p class="text-sm text-gray-600 font-medium">영상을 드래그하거나 클릭하여 업로드</p>
-                        <p class="text-[11px] text-gray-500 mt-1">※ 10MB 이상의 대용량은 구글 드라이브 링크를 권장합니다.</p>
+                    <label class="block text-sm font-bold mb-1 text-gray-700">원본 영상 첨부</label>
+                    <div id="drop-zone" class="relative border-2 border-dashed border-gray-300 rounded-2xl p-10 text-center hover:border-red-500 transition-all bg-gray-50">
+                        <input type="file" name="upload" id="file-input" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                        
+                        <div id="upload-content">
+                            <p id="file-message" class="text-sm text-gray-600 font-bold">영상을 드래그하거나 클릭하여 업로드</p>
+                            <p class="text-[11px] text-gray-400 mt-2">※ 대용량은 구글 드라이브 링크를 권장합니다.</p>
+                        </div>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-[#cc0000] hover:bg-[#ff0000] text-white font-bold py-4 rounded-full transition shadow-md active:scale-95 text-lg">
-                    신청서 제출하기
+                <button type="submit" class="w-full bg-[#cc0000] hover:bg-[#ff0000] text-white font-extrabold py-5 rounded-full transition-all shadow-lg active:scale-95 text-xl tracking-widest">
+                    신청하기 🚀
                 </button>
             </form>
         </div>
-        <p class="text-center text-xs text-gray-400 mt-6">© 2025 Video Edit Studio. All rights reserved.</p>
+        <p class="text-center text-xs text-gray-400 mt-8 font-medium">© 2025 Video Edit Studio. 전문 편집팀이 함께합니다.</p>
     </div>
+
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const fileMessage = document.getElementById('file-message');
+        const dropZone = document.getElementById('drop-zone');
+
+        fileInput.addEventListener('change', function(e) {
+            if (fileInput.files.length > 0) {
+                const fileName = fileInput.files[0].name;
+                fileMessage.innerHTML = `<span class="text-[#ff0000] text-lg">✔ 선택됨: ${fileName}</span>`;
+                dropZone.classList.add('upload-active');
+            } else {
+                fileMessage.innerText = '영상을 드래그하거나 클릭하여 업로드';
+                dropZone.classList.remove('upload-active');
+            }
+        });
+    </script>
 
 </body>
 </html>
